@@ -1,0 +1,17 @@
+<div class="weather-data">
+  <h2>Current Weather</h2>
+
+  <div class="weather-details">
+    <p>Temperature: <%= @weather['main']['temp'] %>K</p>
+    <p>Feels like: <%= @weather['main']['feels_like'] %>K</p>
+    <p>Conditions: <%= @weather['weather'].first['description'].titleize %></p>
+    <p>Humidity: <%= @weather['main']['humidity'] %>%</p>
+    <p>Wind Speed: <%= @weather['wind']['speed'] %> m/s</p>
+  </div>
+
+  <div class="debug-info">
+    <pre><%= JSON.pretty_generate(@weather) %></pre>
+  </div>
+
+  <%= link_to "Back to Search", weather_path, class: "btn btn-primary" %>
+</div>
